@@ -98,19 +98,14 @@ void put_student(int sdt_idx)
 	}
 	max = 0;
 	int x=0, y=0;
-
-
-	int start = 0;
 	while (!candi.cnt_like.empty())
 	{
-		if (start == 0 && map[candi.x.front()][candi.y.front()] == 0)
+		if (max_like == 0&& max_empty ==0 && map[candi.x.front()][candi.y.front()] == 0)
 		{
 			max_like = candi.cnt_like.front();
 			max_empty = candi.cnt_empty.front();
 			x = candi.x.front();
 			y = candi.y.front();
-
-			start = 1;
 		}
 		if (candi.cnt_like.front() > max_like && map[candi.x.front()][candi.y.front()] ==0)
 		{
@@ -126,8 +121,6 @@ void put_student(int sdt_idx)
 			x = candi.x.front();
 			y = candi.y.front();
 		}
-		//cout << sdt[sdt_idx].s << " : " << max_like << " " << max_empty << " " << x << " " << y << "\n";
-
 
 		candi.cnt_like.pop();
 		candi.cnt_empty.pop();
